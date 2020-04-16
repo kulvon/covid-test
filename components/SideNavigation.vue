@@ -34,7 +34,7 @@
       </v-icon>
 
       <nav class="SideNavigation-Menu">
-        <div class="SideNavigation-Language">
+        <!-- <div class="SideNavigation-Language">
           <div
             v-if="this.$i18n.locales.length > 1"
             class="SideNavigation-Language"
@@ -44,45 +44,12 @@
             </label>
             <language-selector />
           </div>
-        </div>
+        </div> -->
         <menu-list :items="items" @click="$emit('closeNavi', $event)" />
       </nav>
 
       <footer class="SideNavigation-Footer">
         <div class="SideNavigation-Social">
-          <a
-            href="https://line.me/R/ti/p/%40822sysfc"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="SideNavigation-SocialLink"
-          >
-            <picture>
-              <source srcset="/line.webp" type="image/webp" />
-              <img src="/line.png" alt="LINE" />
-            </picture>
-          </a>
-          <a
-            href="https://twitter.com/tokyo_bousai"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="SideNavigation-SocialLink"
-          >
-            <picture>
-              <source srcset="/twitter.webp" type="image/webp" />
-              <img src="/twitter.png" alt="Twitter" />
-            </picture>
-          </a>
-          <a
-            href="https://www.facebook.com/tochokoho"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="SideNavigation-SocialLink"
-          >
-            <picture>
-              <source srcset="/facebook.webp" type="image/webp" />
-              <img src="/facebook.png" alt="Facebook" />
-            </picture>
-          </a>
           <a
             href="https://github.com/tokyo-metropolitan-gov/covid19"
             target="_blank"
@@ -157,43 +124,33 @@ export default Vue.extend({
           title: this.$t('お子様をお持ちの皆様へ'),
           link: this.localePath('/parent')
         },
-        {
-          icon: 'mdi-account-multiple',
-          title: this.$t('都民の皆様へ'),
-          link: 'https://www.metro.tokyo.lg.jp/tosei/tosei/news/2019-ncov.html'
-        },
-        {
-          icon: 'mdi-domain',
-          title: this.$t('企業の皆様・はたらく皆様へ'),
-          link: this.localePath('/worker'),
-          divider: true
-        },
-        {
-          title: this.$t('石川県新型コロナウイルス感染症対策本部報'),
-          link:
-            'https://www.bousai.metro.tokyo.lg.jp/taisaku/saigai/1007261/index.html'
-        },
-        {
-          title: this.$t('石川県主催等 中止又は延期するイベント等'),
-          link:
-            'https://www.seisakukikaku.metro.tokyo.lg.jp/information/event00.html'
-        },
-        {
-          title: this.$t('知事からのメッセージ'),
-          link:
-            'https://www.metro.tokyo.lg.jp/tosei/governor/governor/katsudo/2020/03/03_00.html'
-        },
+        // {
+        //   icon: 'mdi-account-multiple',
+        //   title: this.$t('県民の皆様へ'),
+        //   link: 'https://www.metro.tokyo.lg.jp/tosei/tosei/news/2019-ncov.html'
+        // },
+        // {
+        //   title: this.$t('石川県新型コロナウイルス感染症対策本部報'),
+        //   link:
+        //     'https://www.bousai.metro.tokyo.lg.jp/taisaku/saigai/1007261/index.html'
+        // },
+        // {
+        //   title: this.$t('石川県主催等 中止又は延期するイベント等'),
+        //   link:
+        //     'https://www.seisakukikaku.metro.tokyo.lg.jp/information/event00.html'
+        // },
+        // {
+        //   title: this.$t('知事からのメッセージ'),
+        //   link:
+        //     'https://www.metro.tokyo.lg.jp/tosei/governor/governor/katsudo/2020/03/03_00.html'
+        // },
         {
           title: this.$t('当サイトについて'),
           link: this.localePath('/about')
         },
         {
-          title: this.$t('お問い合わせ先一覧'),
-          link: this.localePath('/contacts')
-        },
-        {
           title: this.$t('石川県公式ホームページ'),
-          link: 'https://www.metro.tokyo.lg.jp/'
+          link: 'https://www.pref.ishikawa.lg.jp/'
         }
       ]
     }
@@ -359,11 +316,11 @@ export default Vue.extend({
   }
 }
 
-.SideNavigation-LanguageLabel {
-  display: block;
-  margin-bottom: 5px;
-  font-size: 0.85rem;
-}
+// .SideNavigation-LanguageLabel {
+//   display: block;
+//   margin-bottom: 5px;
+//   font-size: 0.85rem;
+// }
 
 .SideNavigation-Footer {
   padding-top: 20px;

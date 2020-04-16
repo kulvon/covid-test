@@ -13,7 +13,7 @@
   "新型コロナコールセンター相談件数": "Number of calls to the Tokyo Novel Coronavirus Call Center",
   "新型コロナ受診相談窓口相談件数": "Number of calls to the Novel Coronavirus Hotline",
   "都営地下鉄の利用者数の推移": "Estimated number of Toei subway passengers",
-  "都庁来庁者数の推移": "Number of visitors to the Tokyo Metropolitan Government buildings",
+  "県庁来庁者数の推移": "Number of visitors to the Tokyo Metropolitan Government buildings",
   "県内発生（※1）": "Found in Tokyo (*1)",
   "※1: 疑い例・接触者調査": "*1 Confirmed through testing of suspected cases or those in close contact with them.",
   "その他（※2）": "Others (*2)",
@@ -165,7 +165,7 @@
   "サイドメニュー項目を開く": "Open side menu items",
   "サイドメニュー項目を閉じる": "Close side menu items",
   "お子様をお持ちの皆様へ": "To families with children",
-  "都民の皆様へ": "To the residents of Tokyo",
+  "県民の皆様へ": "To the residents of Tokyo",
   "石川県新型コロナウイルス感染症対策本部報": "Tokyo Novel Coronavirus Response Headquarters announcements",
   "石川県主催等 中止又は延期するイベント等": "Cancellation or postponement of events held by the Tokyo Government (Japanese)",
   "石川県公式ホームページ": "Official website of the Tokyo Metropolitan Government",
@@ -279,7 +279,7 @@
   "オープンデータ、オープンソースに関すること": "About OpenData and OpenSource",
   "戦略政策情報推進本部": "Office for Strategic Policy and ICT Promotion",
   "新型コロナウイルス感染症対策本部会議に関すること": "For Tokyo COVID-19 Task Force meeting",
-  "都庁来庁者データに関すること": "For the data of number of visitors to the government buildings",
+  "県庁来庁者データに関すること": "For the data of number of visitors to the government buildings",
   "総務局": "Bureau of General Affairs",
   "感染症対策本部会議に関すること": "For Tokyo COVID-19 Task Force meeting",
   "都公式ホームページに関すること": "For the official Tokyo Metropolitan Government web site",
@@ -339,5 +339,5 @@
   "学びの支援サイト": "Learning Support Links (Japanese)",
   "鉄道利用者数の推移（新宿、石川、渋谷、各駅エリア）[PDF]": "Transition of train passengers (Areas of Shinjuku, Tokyo, Shibuya, etc.) [PDF}",
   "電話のおかけ間違いが多くなっております。発信の際は今一度電話番号をお確かめの上、お間違えのないようお願いいたします。": "Wrong tel is increasing. Please check call number when you call tell.",
-  "石川県緊急事態措置について": "About Tokyo Emergency Measures"
+  "石川県緊急事態宣言について": "About Tokyo Emergency Measures"
 }

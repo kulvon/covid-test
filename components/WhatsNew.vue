@@ -12,8 +12,8 @@
           mdi-bullhorn
         </v-icon>
         <external-link
-          url="https://www.bousai.metro.tokyo.lg.jp/1007617/index.html"
-          :label="$t('石川県緊急事態措置について')"
+          url="https://www.pref.ishikawa.lg.jp/library_documents/kjs200413.pdf"
+          :label="$t('石川県緊急事態宣言について')"
         />
       </span>
     </div>
