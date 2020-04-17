@@ -1,4 +1,4 @@
-name: 福井県のデータをGitHubへPush
+name: 石川県のデータをGitHubへPush
 
 on:
   repository_dispatch:
@@ -73,9 +73,9 @@ jobs:
 
       - name: Dockerイメージをビルド
         env:
-          CSV_FETCH_ENV: ${{ secrets.CSV_FETCH_ENV }}
+          # CSV_FETCH_ENV: ${{ secrets.CSV_FETCH_ENV }}
         run: |
-          echo "$CSV_FETCH_ENV" > covid19_ishikawa/.env.local
+          //  echo "$CSV_FETCH_ENV" > covid19_ishikawa/.env.local
           docker-compose build fetch_ishikawa_data
 
       - name: data/*.jsonを作成
