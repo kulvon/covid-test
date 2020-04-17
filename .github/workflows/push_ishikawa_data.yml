@@ -1,0 +1,169 @@
+name: 福井県のデータをGitHubへPush
+
+on:
+  repository_dispatch:
+  schedule:
+    - cron: '0 * * * *'
+    # - cron: '* * * * *'
+
+jobs:
+  fetch_data:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: 共通のデータを出力
+        id: metadatas
+        uses: actions/github-script@0.9.0
+        with:
+          secondary-base-branch: ${{ secrets.SECONDARY_BASE_BRANCH }}
+          secondary-alt-base-branches: ${{ secrets.SECONDARY_ALT_BASE_BRANCHES }}
+          script: |
+            console.log(context)
+
+            const clientPayloadHasBaseBranch = context.payload.client_payload != null && typeof context.payload.client_payload.base_branch === 'string' && context.payload.client_payload.base_branch.length > 1
+            const inputHasBaseBranch = core.getInput('secondary-base-branch') !== ''
+            const isScheduled = context.eventName === 'schedule'
+
+            let baseBranch = ''
+            let altBaseBranches = []
+            if (clientPayloadHasBaseBranch) {
+              baseBranch = context.payload.client_payload.base_branch
+
+              if (Array.isArray(context.payload.client_payload.alt_base_branches)) {
+                altBaseBranches.push(...context.payload.client_payload.alt_base_branches.filter(branch => branch !== ''))
+              }
+            } else if (inputHasBaseBranch) {
+              baseBranch = core.getInput('secondary-base-branch')
+              altBaseBranches = core.getInput('secondary-alt-base-branches').split(' ').filter(branch => branch !== '')
+            } else if (isScheduled) {
+              baseBranch = 'nomu_production'
+              altBaseBranches = ['nomu_development']
+            } else {
+              baseBranch = context.payload.repository.default_branch.replace('refs/heads/', '')
+            }
+
+            const githubRepository = '${{ github.repository }}'
+
+            const owner = githubRepository.split('/')[0]
+            const repo = githubRepository.split('/')[1]
+
+            if (!owner || !repo) {
+              throw new Error('${{ github.repository}} is invalid')
+            }
+
+            const headBranch = `update_data/updatejson_for/${baseBranch}`
+
+            console.log(JSON.stringify({ headBranch, baseBranch, altBaseBranches }))
+
+            core.setOutput('head-branch', headBranch)
+            core.setOutput('base-branch', baseBranch)
+            core.setOutput('owner', owner)
+            core.setOutput('repo', repo)
+            core.setOutput('alt-base-branches', JSON.stringify(altBaseBranches))
+            core.setOutput('current-date', (new Date).toString())
+
+      - name: Gitを設定
+        run: |
+          git config --global user.name github-actions
+          git config --global user.email actions@github.com
+
+      - name: リポジトリをチェックアウト
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ steps.metadatas.outputs.base-branch }}
+
+      - name: Dockerイメージをビルド
+        env:
+          CSV_FETCH_ENV: ${{ secrets.CSV_FETCH_ENV }}
+        run: |
+          echo "$CSV_FETCH_ENV" > covid19_ishikawa/.env.local
+          docker-compose build fetch_ishikawa_data
+
+      - name: data/*.jsonを作成
+        run: docker-compose run fetch_ishikawa_data
+
+      - name: ブランチを作成
+        id: branch
+        env:
+          TZ: JST-9
+          BRANCH_NAME: ${{ steps.metadatas.outputs.head-branch }}
+        run: |
+          git switch -c $BRANCH_NAME
+
+      - name: コミット
+        run: |
+          git add .
+          git commit -m "[Auto] データを更新 ${{ steps.metadatas.outputs.current-date }}"
+      
+      - name: 重複しているPRを削除
+        uses: actions/github-script@0.9.0
+        id: closed-pulls
+        with:
+          script: |
+            const owner = '${{ steps.metadatas.outputs.owner }}'
+            const repo = '${{ steps.metadatas.outputs.repo }}'
+            const head = '${{ steps.metadatas.outputs.head-branch }}'
+
+            // 重複しているかもしれないPRを取得
+            const duplicatePulls = (await github.pulls.list({
+              owner,
+              repo,
+              head: `${owner}:${head}`,
+              status: 'open',
+            })).data
+
+            const closedPulls = {}
+            for await (pull of duplicatePulls) {
+              await github.pulls.update({
+                owner,
+                repo,
+                pull_number: pull.number,
+                state: 'closed',
+              })
+              closedPulls[pull.base.ref] = pull.number
+            }
+
+            core.setOutput('number-with-branch', JSON.stringify(closedPulls))
+
+      - name: プッシュ
+        run: git push -fu origin '${{ steps.metadatas.outputs.head-branch }}'
+
+      - name: Pull request を作成
+        uses: actions/github-script@0.9.0
+        with:
+          closed-pulls: ${{ steps.closed-pulls.outputs.number-with-branch }}
+          alt-base-branches: ${{ steps.metadatas.outputs.alt-base-branches }}
+          script: |
+            const closedPulls = JSON.parse(core.getInput('closed-pulls'), { required: true })
+            const altBaseBranches = JSON.parse(core.getInput('alt-base-branches'), { required: true })
+
+            const owner = '${{ steps.metadatas.outputs.owner }}'
+            const repo = '${{ steps.metadatas.outputs.repo }}'
+            const genTitleFor = branch => `[Auto for ${branch}]データ更新 ${{ steps.metadatas.outputs.current-date }}`
+            const head = '${{ steps.metadatas.outputs.head-branch }}'
+            const baseBranches = ['${{ steps.metadatas.outputs.base-branch }}', ...altBaseBranches]
+
+            baseBranches.forEach(async base => {
+              const newPrData = (await github.pulls.create({
+                owner,
+                repo,
+                title: genTitleFor(base),
+                head,
+                base,
+              })).data
+
+              await github.issues.addLabels({
+                owner,
+                repo,
+                issue_number: newPrData.number,
+                labels: ['auto_merge'],
+              })
+
+              if (closedPulls[base] != null) {
+                await github.issues.createComment({
+                  owner,
+                  repo,
+                  issue_number: closedPulls[base],
+                  body: `Superseded by #${newPrData.number}.`,
+                })
+              }
+            })
