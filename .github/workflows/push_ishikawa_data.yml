@@ -3,7 +3,7 @@ name: 福井県のデータをGitHubへPush
 on:
   repository_dispatch:
   schedule:
-    - cron: '0 * * * *'
+    - cron: '*/15 * * * *'
     # - cron: '* * * * *'
 
 jobs:
