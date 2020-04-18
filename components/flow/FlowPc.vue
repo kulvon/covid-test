@@ -46,7 +46,7 @@
         >
           <template v-slot:advisory>
             <span :class="$style.TitleLarge">
-              {{ $t('新型コロナ受診相談窓口') }}
+              {{ $t('帰国者・接触者 電話相談センター') }}
             </span>
           </template>
         </i18n>

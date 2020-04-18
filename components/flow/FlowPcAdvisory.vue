@@ -4,7 +4,7 @@
       <div :class="$style.AdvisoryContents">
         <div>
           <span :class="$style.AdvisoryContentsTitle">{{
-            $t('帰国者・接触者 電話相談センター')
+            $t('帰国者・接触者 相談センター')
           }}</span>
         </div>
         <div :class="[$style.AdvisoryContentsColsSentense_17Ilp, 'mt-4']">

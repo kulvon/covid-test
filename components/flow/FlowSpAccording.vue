@@ -3,7 +3,7 @@
     <i18n tag="div" :class="$style.heading" path="{advisory}による相談結果">
       <template v-slot:advisory>
         <span :class="[$style.fzLarge, $style.break]">
-          {{ $t('新型コロナ受診相談窓口') }}
+          {{ $t('帰国者・接触者 電話相談センター') }}
         </span>
       </template>
     </i18n>
@@ -75,7 +75,7 @@
       <span :class="$style.break">
         <!-- 改行によって空白が入らないように-->
         <!-- eslint-disable -->
-        <span :class="$style.fzXLLarge">{{ $t('PCR検査') }}</span>{{ $t('※') }}
+        <span :class="$style.fzXLLarge">{{ $t('PCR検査') }}</span>
         <!-- eslint-enable -->
       </span>
       <span :class="$style.break">
