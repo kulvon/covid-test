@@ -54,9 +54,13 @@
         {{ $t('一般的な電話相談窓口') }}
       </div>
 
-      <div :class="$style.Tel">
-        <a :class="$style.TelLink" href="tel:0570550571">
-          0570-550571
+      <div :class="$style.link">
+        <a
+          href="https://www.pref.ishikawa.lg.jp/kansen/corona.html"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {{ $t('各保健所の電話番号はこちら') }}
         </a>
       </div>
     </div>
