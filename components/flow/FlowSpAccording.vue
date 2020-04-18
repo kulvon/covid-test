@@ -81,13 +81,6 @@
       <span :class="$style.break">
         {{ $t('石川県健康安全研究センター等') }}
       </span>
-      <small :class="[$style.note, $style.fzSmall, $style.break]">
-        {{
-          $t(
-            '※保険適用となる検査は、当面の間、院内感染防止等の観点から、「帰国者・接触者外来」等の医療機関で実施'
-          )
-        }}
-      </small>
     </p>
     <div :class="[$style.rectContainer, $style.double]">
       <a
