@@ -87,86 +87,6 @@
       </p>
     </static-card>
     <static-card>
-      <h3>{{ $t('Google Analyticsの利用について') }}</h3>
-      <p>
-        {{
-          $t(
-            '当サイトでは、サービス向上やサイトの改善のためにGoogle LLCの提供するアクセス分析のツールであるGoogle Analyticsを利用した計測を行っております。'
-          )
-        }}
-      </p>
-      <p>
-        {{
-          $t(
-            'Google Analyticsでは、当サイトが発行するクッキー (Cookie) 等を利用して、Webサイトの利用データ（アクセス状況、トラフィック、閲覧環境、IPアドレスなど）を収集しております。クッキーの利用に関してはGoogleのプライバシーポリシーと規約に基づいております。'
-          )
-        }}
-      </p>
-      <p>
-        {{
-          $t(
-            '取得したデータはWebサイト利用状況を分析しサービスの改善につなげるため、またはサイト運営者へのレポートを作成するため、その他のサービスの提供に関わる目的に限り、これを使用します。（サイト運営者へのレポートでは、クッキーはブラウザ単位で本サイトのユーザー数をカウントするため、IPアドレスはGoogle Analyticsの分析機能を通じてアクセス元の地域分布（国、州・都道府県、都市）を把握するために利用されています。）'
-          )
-        }}
-      </p>
-      <p>
-        {{
-          $t(
-            'Google Analyticsの利用規約及びプライバシーポリシーに関する説明については、Google Analyticsのサイトをご覧ください。'
-          )
-        }}
-      </p>
-      <ul>
-        <li>
-          <a
-            :href="
-              $t(
-                'https://marketingplatform.google.com/about/analytics/terms/jp/'
-              )
-            "
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {{ $t('Google Analytics利用規約') }}
-          </a>
-        </li>
-        <li>
-          <a
-            :href="$t('https://policies.google.com/privacy?hl=ja')"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {{ $t('Googleのプライバシーポリシー') }}
-          </a>
-        </li>
-        <li>
-          <a
-            :href="
-              $t('https://support.google.com/analytics/answer/6004245?hl=ja')
-            "
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {{ $t('Google Analyticsに関する詳細情報') }}
-          </a>
-        </li>
-      </ul>
-      <i18n
-        tag="p"
-        path="Google Analyticsによる情報送信を回避する場合は、Google がサポートする{addon}をご利用ください。"
-      >
-        <template v-slot:addon>
-          <a
-            :href="$t('https://tools.google.com/dlpage/gaoptout?hl=ja')"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {{ $t('測定を無効にするブラウザ アドオン') }}
-          </a>
-        </template>
-      </i18n>
-    </static-card>
-    <static-card>
       <h3>{{ $t('免責事項') }}</h3>
       <p>
         {{
@@ -188,44 +108,6 @@
             '当サイトに掲載されている情報は、予告なしに変更又は削除することがあります。'
           )
         }}
-      </p>
-    </static-card>
-    <static-card>
-      <h3>{{ $t('データについて') }}</h3>
-      <i18n
-        tag="p"
-        path="本サイトで公表しているデータは、{catalogWebsite}より誰でも自由にダウンロードが可能です。（データは順次追加予定です）"
-      >
-        <template v-slot:catalogWebsite>
-          <a
-            href="https://portal.data.metro.tokyo.lg.jp/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {{ $t('石川県オープンデータカタログサイト') }}
-          </a>
-        </template>
-      </i18n>
-    </static-card>
-    <static-card>
-      <h3>{{ $t('ソースコードについて') }}</h3>
-      <p>
-        {{
-          $t(
-            '当サイトのソースコードはMITライセンスで公開されており、誰でも自由に利用することができます。'
-          )
-        }}
-        <i18n path="詳しくは、{githubRepo}をご確認ください。">
-          <template v-slot:githubRepo>
-            <a
-              href="https://github.com/tokyo-metropolitan-gov/covid19"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {{ $t('GitHub リポジトリ') }}
-            </a>
-          </template>
-        </i18n>
       </p>
     </static-card>
   </div>

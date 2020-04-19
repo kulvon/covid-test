@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import Data from '@/data/patients_graph.json'
+import Data from '@/data/patients_summary.json'
 import formatGraph from '@/utils/formatGraph'
 import TimeBarChart from '@/components/TimeBarChart.vue'
 

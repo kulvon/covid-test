@@ -10,7 +10,7 @@
   "陽性患者数": "Number of confirmed cases",
   "陽性患者の属性": "Details of patients testing positive",
   "検査実施件数": "Number of tests conducted",
-  "新型コロナコールセンター相談件数": "Number of calls to the Tokyo Novel Coronavirus Call Center",
+  "帰国者・接触者相談センター相談件数": "Number of calls to the Tokyo Novel Coronavirus Call Center",
   "新型コロナ受診相談窓口相談件数": "Number of calls to the Novel Coronavirus Hotline",
   "都営地下鉄の利用者数の推移": "Estimated number of Toei subway passengers",
   "県庁来庁者数の推移": "Number of visitors to the Tokyo Metropolitan Government buildings",
@@ -339,5 +339,5 @@
   "学びの支援サイト": "Learning Support Links (Japanese)",
   "鉄道利用者数の推移（新宿、石川、渋谷、各駅エリア）[PDF]": "Transition of train passengers (Areas of Shinjuku, Tokyo, Shibuya, etc.) [PDF}",
   "電話のおかけ間違いが多くなっております。発信の際は今一度電話番号をお確かめの上、お間違えのないようお願いいたします。": "Wrong tel is increasing. Please check call number when you call tell.",
-  "石川県緊急事態宣言について": "About Tokyo Emergency Measures"
+  "新型コロナウイルス感染拡大に係る石川県緊急事態措置": "About Tokyo Emergency Measures"
 }

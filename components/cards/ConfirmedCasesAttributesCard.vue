@@ -17,7 +17,7 @@
 <script>
 // import Data from '@/data/data.json'
 import Patients from '@/data/170003_ishikawa_covid19_patients.json'
-import Data from '@/data/patients_graph.json'
+import Data from '@/data/patients_summary.json'
 import formatGraph from '@/utils/formatGraph'
 import formatTable from '@/utils/formatTable'
 import DataTable from '@/components/DataTable.vue'

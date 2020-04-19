@@ -5,19 +5,19 @@
       "summarry": [
         {
           "attr": "感染者",
-          "value": "146"
+          "value": 146
         },
         {
           "attr": "退院",
-          "value": "9"
+          "value": 9
         },
         {
           "attr": "死亡",
-          "value": "4"
+          "value": 4
         },
         {
           "attr": "治療中",
-          "value": "133"
+          "value": 133
         }
       ],
       "data": [

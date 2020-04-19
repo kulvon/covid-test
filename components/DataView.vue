@@ -349,7 +349,7 @@ export default Vue.extend({
   &-Title {
     width: 100%;
     margin-bottom: 10px;
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     line-height: 1.5;
     font-weight: normal;
     color: $gray-2;
