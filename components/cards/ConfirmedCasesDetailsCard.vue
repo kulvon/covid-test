@@ -3,7 +3,7 @@
     <data-view
       :title="$t('検査陽性者の状況')"
       :title-id="'details-of-confirmed-cases'"
-      :date="Data.patients.date"
+      :date="InspectionsSummary.date"
     >
       <template v-slot:button>
         <p :class="$style.note">
@@ -28,7 +28,8 @@
 </style>
 
 <script>
-import Data from '@/data/data.json'
+// import Data from '@/data/data.json'
+import InspectionsSummary from '@/data/170003_ishikawa_covid19_city_town_patients.json'
 import formatConfirmedCases from '@/utils/formatConfirmedCases'
 import DataView from '@/components/DataView.vue'
 import ConfirmedCasesDetailsTable from '@/components/ConfirmedCasesDetailsTable.vue'
@@ -40,10 +41,11 @@ export default {
   },
   data() {
     // 検査陽性者の状況
-    const confirmedCases = formatConfirmedCases(Data.main_summary)
+    // const confirmedCases = formatConfirmedCases(Data.main_summary)
+    const confirmedCases = formatConfirmedCases(InspectionsSummary)
 
     const data = {
-      Data,
+      InspectionsSummary,
       confirmedCases
     }
     return data

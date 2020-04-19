@@ -112,11 +112,11 @@ function readPatientsV2() : array
 {
   $data = xlsxToArray(__DIR__.'/downloads/石川県患者発生発表数-RAW.xlsx', 'RAW', 'A2:J100', 'A1:J1');
   $base_data = $data->filter(function ($row) {
-    return $row['リリース日'];
+    return $row['公表_年月日'];
   })->map(function ($row) {
-    $date = '2020-'.str_replace(['月', '日'], ['-', ''], $row['リリース日']);
+    $date = '2020-'.str_replace(['月', '日'], ['-', ''], $row['公表_年月日']);
     $carbon = Carbon::parse($date);
-    $row['リリース日'] = $carbon->format('Y-m-d').'T08:00:00.000Z';
+    $row['公表_年月日'] = $carbon->format('Y-m-d').'T08:00:00.000Z';
     $row['date'] = $carbon->format('Y-m-d');
     $row['w'] = $carbon->format('w');
     $row['short_date'] = $carbon->format('m/d');
@@ -126,32 +126,32 @@ function readPatientsV2() : array
   return [
     'date' => xlsxToArray(__DIR__.'/downloads/石川県患者発生発表数-RAW.xlsx', 'RAW', 'M1')[0][0],
     'data' => [
-      '感染者数' => makeDateArray('2020-01-24')->merge($base_data->groupBy('リリース日')->map(function ($rows) {
+      '感染者数' => makeDateArray('2020-01-24')->merge($base_data->groupBy('公表_年月日')->map(function ($rows) {
         return $rows->count();
       })),
       '退院者数' => makeDateArray('2020-01-24')->merge($base_data->filter(function ($row) {
         return $row['退院'] === '〇' && !preg_match('/死亡$/', trim($row['備考']));
-      })->groupBy('リリース日')->map(function ($rows) {
+      })->groupBy('公表_年月日')->map(function ($rows) {
         return $rows->count();
       })),
       '死亡者数' => makeDateArray('2020-01-24')->merge($base_data->filter(function ($row) {
         return preg_match('/死亡$/', trim($row['備考']));
-      })->groupBy('リリース日')->map(function ($rows) {
+      })->groupBy('公表_年月日')->map(function ($rows) {
         return $rows->count();
       })),
       '軽症' => makeDateArray('2020-01-24')->merge($base_data->filter(function ($row) {
         return $row['退院'] !== '〇' && trim($row['備考']) == '';
-      })->groupBy('リリース日')->map(function ($rows) {
+      })->groupBy('公表_年月日')->map(function ($rows) {
         return $rows->count();
       })),
       '中等症' => makeDateArray('2020-01-24')->merge($base_data->filter(function ($row) {
         return $row['退院'] !== '〇' && preg_match('/中等症$/', trim($row['備考']));
-      })->groupBy('リリース日')->map(function ($rows) {
+      })->groupBy('公表_年月日')->map(function ($rows) {
         return $rows->count();
       })),
       '重症' => makeDateArray('2020-01-24')->merge($base_data->filter(function ($row) {
         return $row['退院'] !== '〇' && preg_match('/重症$/', trim($row['備考']));
-      })->groupBy('リリース日')->map(function ($rows) {
+      })->groupBy('公表_年月日')->map(function ($rows) {
         return $rows->count();
       }))
 
@@ -166,11 +166,11 @@ function readPatients() : array
     return [
       'date' => xlsxToArray(__DIR__.'/downloads/石川県患者発生発表数-RAW.xlsx', 'RAW', 'M1')[0][0],
       'data' => $data->filter(function ($row) {
-        return $row['リリース日'];
+        return $row['公表_年月日'];
       })->map(function ($row) {
-        $date = '2020-'.str_replace(['月', '日'], ['-', ''], $row['リリース日']);
+        $date = '2020-'.str_replace(['月', '日'], ['-', ''], $row['公表_年月日']);
         $carbon = Carbon::parse($date);
-        $row['リリース日'] = $carbon->format('Y-m-d').'T08:00:00.000Z';
+        $row['公表_年月日'] = $carbon->format('Y-m-d').'T08:00:00.000Z';
         $row['date'] = $carbon->format('Y-m-d');
         $row['w'] = $carbon->format('w');
         $row['short_date'] = $carbon->format('m/d');
@@ -188,7 +188,7 @@ function createSummary(array $patients) {
         '日付' => $key,
         '小計' => $val
       ];
-    })->merge($patients['data']->groupBy('リリース日')->map(function ($group, $key) {
+    })->merge($patients['data']->groupBy('公表_年月日')->map(function ($group, $key) {
       return [
         '日付' => $key,
         '小計' => $group->count()

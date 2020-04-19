@@ -12,9 +12,6 @@
     <confirmed-cases-attributes-card
       v-else-if="this.$route.params.card == 'attributes-of-confirmed-cases'"
     />
-    <tested-number-card
-      v-else-if="this.$route.params.card == 'number-of-tested'"
-    />
     <inspection-persons-number-card
       v-else-if="this.$route.params.card == 'number-of-inspection-persons'"
     />

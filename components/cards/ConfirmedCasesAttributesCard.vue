@@ -5,7 +5,7 @@
       :title-id="'attributes-of-confirmed-cases'"
       :chart-data="patientsTable"
       :chart-option="{}"
-      :date="Data.patients.date"
+      :date="Patients.date"
       :info="sumInfoOfPatients"
       :url="'https://catalog.data.metro.tokyo.lg.jp/dataset/t000010d0000000068'"
       :source="$t('オープンデータを入手')"
@@ -15,7 +15,9 @@
 </template>
 
 <script>
-import Data from '@/data/data.json'
+// import Data from '@/data/data.json'
+import Patients from '@/data/170003_ishikawa_covid19_patients.json'
+import Data from '@/data/patients_graph.json'
 import formatGraph from '@/utils/formatGraph'
 import formatTable from '@/utils/formatTable'
 import DataTable from '@/components/DataTable.vue'
@@ -26,9 +28,9 @@ export default {
   },
   data() {
     // 感染者数グラフ
-    const patientsGraph = formatGraph(Data.patients_summary.data)
+    const patientsGraph = formatGraph(Data.data)
     // 感染者数
-    const patientsTable = formatTable(Data.patients.data)
+    const patientsTable = formatTable(Patients.data)
 
     const sumInfoOfPatients = {
       lText: patientsGraph[
@@ -61,6 +63,7 @@ export default {
 
     const data = {
       Data,
+      Patients,
       patientsTable,
       sumInfoOfPatients
     }
