@@ -25,27 +25,27 @@ const openDataSource = [
   {
     name: 'call_center',
     url:
-      'https://web.check-data.work/covid/170003_ishikawa_covid19_call_center.csv'
+      'https://www.pref.ishikawa.lg.jp/kansen/documents/170003_ishikawa_covid19_call_center.csv'
   },
   {
     name: 'patients',
     url:
-      'https://web.check-data.work/covid/170003_ishikawa_covid19_patients.csv'
+      'https://www.pref.ishikawa.lg.jp/kansen/documents/170003_ishikawa_covid19_patients.csv'
   },
   {
     name: 'test_count',
     url:
-      'https://web.check-data.work/covid/170003_ishikawa_covid19_test_count.csv'
+      'https://www.pref.ishikawa.lg.jp/kansen/documents/170003_ishikawa_covid19_test_count.csv'
   },
   {
     name: 'city_patients',
     url:
-      'https://web.check-data.work/covid/170003_ishikawa_covid19_city_town_patients.csv'
+      'https://www.pref.ishikawa.lg.jp/kansen/documents/170003_ishikawa_covid19_city_town_patients.csv'
   },
   {
     name: 'general_consultation',
     url:
-      'https://web.check-data.work/covid/170003_ishikawa_covid19_counter.csv'
+      'https://www.pref.ishikawa.lg.jp/kansen/documents/170003_ishikawa_covid19_counter.csv'
   },
   {
     name: 'news',
