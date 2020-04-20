@@ -6,14 +6,14 @@
 [![石川県 新型コロナウイルス感染症対策サイト](https://raw.githubusercontent.com/kulvon/covid-test/master/static/ogp.png)](https://stopcovid19.pref.shiga.jp/)
 
 
-## 貢献の仕方
-Issues にあるいろいろな修正にご協力いただけると嬉しいです。
+<!-- ## 貢献の仕方 -->
+<!-- Issues にあるいろいろな修正にご協力いただけると嬉しいです。 -->
 
-詳しくは[貢献の仕方](./.github/CONTRIBUTING.md)を御覧ください。
+<!-- 詳しくは[貢献の仕方](./.github/CONTRIBUTING.md)を御覧ください。 -->
 
  
-## 行動原則
-詳しくは[サイト構築にあたっての行動原則](./.github/CODE_OF_CONDUCT.md)を御覧ください。
+<!-- ## 行動原則 -->
+<!-- 詳しくは[サイト構築にあたっての行動原則](./.github/CODE_OF_CONDUCT.md)を御覧ください。 -->
 
 ## ライセンス
 本ソフトウェアは、[MITライセンス](./LICENSE.txt)の元提供されています。
@@ -63,15 +63,15 @@ $ yarn install
 $ docker-compose run --rm app yarn install
 ```
 
-### 本番環境/その他の判定
+<!-- ### 本番環境/その他の判定 -->
 
-`process.env.GENERATE_ENV` の値が、本番の場合は`'production'`に、それ以外の場合は `'development'` になっています。
-テスト環境のみで実行したい処理がある場合はこちらの値をご利用ください。
+<!-- `process.env.GENERATE_ENV` の値が、本番の場合は`'production'`に、それ以外の場合は `'development'` になっています。
+テスト環境のみで実行したい処理がある場合はこちらの値をご利用ください。 -->
 
-### ステージング・本番環境への反映
+<!-- ### ステージング・本番環境への反映 -->
 
 
 
- `master` ブランチがアップデートされると、自動的に `production` ブランチにHTML類がbuildされます。そして、本番サイト https://stopcovid19.pref.shiga.jp/ が更新されます。
+ <!-- `master` ブランチがアップデートされると、自動的に `production` ブランチにHTML類がbuildされます。そして、本番サイト https://stopcovid19.pref.ishikawa.jp/ が更新されます。 -->
 
 <!-- `development` ブランチに対してプルリクエストを作成すると、自動的に `dev-pages` ブランチにHTML類がbuildされます。そして、プレビュー用の一時的なURL ( `https://deploy-preview-123--frosty-lamarr-66d313.netlify.com/` など)が発行されます。 -->
