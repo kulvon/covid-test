@@ -103,7 +103,7 @@ export default {
         ? `${url}/ogp/${this.$route.params.card}.png?t=${timestamp}`
         : `${url}/ogp/${this.$i18n.locale}/${this.$route.params.card}.png?t=${timestamp}`
     const description = `${this.updatedAt} | ${this.$t(
-      '当サイトは新型コロナウイルス感染症 (COVID-19) に関する最新情報を提供するために、石川県が開設したものです。'
+      '当サイトは、石川県による公式情報と客観的な数値をわかりやすく伝えることで、石川県にお住まいの方や、石川県内に拠点を持つ企業の方、石川県を訪れる方が、現状を把握して適切な対策を取れるようにすることを目的としています。'
     )}`
 
     return {
