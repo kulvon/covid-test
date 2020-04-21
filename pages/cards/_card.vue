@@ -76,7 +76,7 @@ export default {
         updatedAt = Data.inspections_summary.date
         break
       case 'number-of-inspection-persons':
-        title = this.$t('検査実施人数')
+        title = this.$t('検査実施件数')
         updatedAt = Data.inspection_persons.date
         break
       case 'number-of-reports-to-covid19-telephone-advisory-center':
@@ -96,12 +96,9 @@ export default {
     return data
   },
   head() {
-    const url = 'https://stopcovid19.metro.tokyo.lg.jp'
+    const url = 'https://stopcovid19.pref.ishikawa.jp'
     const timestamp = new Date().getTime()
-    const ogpImage =
-      this.$i18n.locale === 'ja'
-        ? `${url}/ogp/${this.$route.params.card}.png?t=${timestamp}`
-        : `${url}/ogp/${this.$i18n.locale}/${this.$route.params.card}.png?t=${timestamp}`
+    const ogpImage = this.$tc('ogp.og:image')
     const description = `${this.updatedAt} | ${this.$t(
       '当サイトは、石川県による公式情報と客観的な数値をわかりやすく伝えることで、石川県にお住まいの方や、石川県内に拠点を持つ企業の方、石川県を訪れる方が、現状を把握して適切な対策を取れるようにすることを目的としています。'
     )}`
