@@ -131,7 +131,7 @@ export default Vue.extend({
 </script>
 <style lang="scss">
 .container {
-  @media all and (mix-width: 1264px) {
+  @media all and (min-width: 1264px) {
     .container {
       max-width: 1185px !important;
     }
