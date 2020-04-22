@@ -1,20 +1,5 @@
 {
-    "date": "2020/04/22 15:03",
+    "date": "2020/04/20 14:17",
     "newsItems": [
-        {
-            "date": "2020/4/21",
-            "url": "",
-            "text": "新型コロナウイルス感染症対策サイトを開設しました"
-        },
-        {
-            "date": "2020/4/20",
-            "url": "https://www.videog.jp/player/1zd-s1WOQ2lo",
-            "text": "知事からのメッセージを掲載しました"
-        },
-        {
-            "date": "2020/4/19",
-            "url": "https://www.pref.ishikawa.lg.jp/kikaku/kinkyujitaisoti.html",
-            "text": "石川県緊急事態措置について掲載しました"
-        }
     ]
 }
