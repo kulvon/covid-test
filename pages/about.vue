@@ -129,7 +129,7 @@ export default Vue.extend({
   }
 })
 </script>
-<style>
+<style lang="scss">
 .v-application--wrap {
   width: 100%;
 }
