@@ -4,7 +4,7 @@ import i18n from './nuxt-i18n.config'
 const webpack = require('webpack')
 const purgecss = require('@fullhuman/postcss-purgecss')
 const autoprefixer = require('autoprefixer')
-const environment = process.env.NODE_ENV || 'production'
+const environment = process.env.NODE_ENV || 'development'
 
 const config: Configuration = {
   mode: 'universal',
@@ -113,7 +113,7 @@ const config: Configuration = {
     }
   },
   googleAnalytics: {
-    id: process.env.GOOGLE_ANALYTICS_ID // .env.production などに設定してください。
+    id: 'UA-123456789-1' // .env.production などに設定してください。
   },
   optionalCookies: [
     {
