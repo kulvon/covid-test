@@ -343,35 +343,35 @@ $default-boxdiff: 35px;
 }
 
 // variables.scss Breakpoints: huge (1440)
-// @include lessThan(1440) {
-//   @include override(1440, 3, 15, 150, 35);
-// }
+@include lessThan(1440) {
+  @include override(1440, 3, 15, 150, 35);
+}
 
 // Vuetify Breakpoints: Large (1264)
-// @include lessThan(1263) {
-//   @include override(1263, 2, 13, 107, 24);
-// }
+@include lessThan(1263) {
+  @include override(1263, 2, 13, 107, 24);
+}
 
 // variables.scss Breakpoints: large (1170)
-// @include lessThan(1170) {
-//   @include override(1170, 2, 13, 107, 24);
-// }
+@include lessThan(1170) {
+  @include override(1170, 2, 13, 107, 24);
+}
 
 // Vuetify Breakpoints: Small (960)
-// @include lessThan(959) {
-//   @include override(960, 4, 14, 180, 40);
-// }
+@include lessThan(959) {
+  @include override(960, 4, 14, 180, 40);
+}
 
-// @include lessThan(767) {
-//   @include override(960, 3, 14, 180, 40);
-// }
+@include lessThan(767) {
+  @include override(960, 3, 14, 180, 40);
+}
 
 // Vuetify Breakpoints: Extra Small (600)
-// @include lessThan(600) {
-//   @include override(600, 3, 14, 150, 35);
-// }
+@include lessThan(600) {
+  @include override(600, 3, 14, 150, 35);
+}
 
-// @include lessThan(420) {
-//   @include override(600, 2, 12, 150, 35);
-// }
+@include lessThan(420) {
+  @include override(600, 2, 12, 150, 35);
+}
 </style>
