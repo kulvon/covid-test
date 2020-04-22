@@ -4,7 +4,7 @@ import i18n from './nuxt-i18n.config'
 const webpack = require('webpack')
 const purgecss = require('@fullhuman/postcss-purgecss')
 const autoprefixer = require('autoprefixer')
-const environment = process.env.NODE_ENV || 'development'
+const environment = process.env.NODE_ENV || 'production'
 
 const config: Configuration = {
   mode: 'universal',
