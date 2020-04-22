@@ -129,12 +129,8 @@ export default Vue.extend({
   }
 })
 </script>
-<style lang="scss">
-.container {
-  @media all and (min-width: 1264px) {
-    .container {
-      max-width: 1185px !important;
-    }
-  }
+<style>
+.v-application--wrap {
+  width: 100%;
 }
 </style>
