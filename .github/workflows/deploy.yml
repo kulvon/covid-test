@@ -12,8 +12,6 @@ jobs:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v2
-        with:
-          ref: master
 
       - name: Setup Node
         uses: actions/setup-node@v1
