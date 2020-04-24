@@ -35,8 +35,6 @@ jobs:
       - name: generate
         run: |
           yarn run generate:deploy --fail-on-page-error
-        env:
-          GOOGLE_ANALYTICS_ID: ${{ secrets.GOOGLE_ANALYTICS_ID }}
 
       # - name: Temporarily disable "include administrators" branch protection
       #   uses: benjefferies/branch-protection-bot@master
