@@ -34,13 +34,13 @@
 </template>
 
 <script>
-// import Data from '@/data/data.json'
+import Data from '@/data/data.json'
 import ConfirmedCasesDetailsCard from '@/components/cards/ConfirmedCasesDetailsCard.vue'
-// import TestedCasesDetailsCard from '@/components/cards/TestedCasesDetailsCard.vue'
+import TestedCasesDetailsCard from '@/components/cards/TestedCasesDetailsCard.vue'
 import ConfirmedCasesNumberCard from '@/components/cards/ConfirmedCasesNumberCard.vue'
 import PatientsByResidenceCard from '@/components/cards/PatientsByResidenceCard.vue'
 import ConfirmedCasesAttributesCard from '@/components/cards/ConfirmedCasesAttributesCard.vue'
-// import TestedNumberCard from '@/components/cards/TestedNumberCard.vue'
+import TestedNumberCard from '@/components/cards/TestedNumberCard.vue'
 import InspectionPersonsNumberCard from '@/components/cards/InspectionPersonsNumberCard.vue'
 import TelephoneAdvisoryReportsNumberCard from '@/components/cards/TelephoneAdvisoryReportsNumberCard.vue'
 import ConsultationDeskReportsNumberCard from '@/components/cards/ConsultationDeskReportsNumberCard.vue'
@@ -48,61 +48,59 @@ import ConsultationDeskReportsNumberCard from '@/components/cards/ConsultationDe
 export default {
   components: {
     ConfirmedCasesDetailsCard,
-    // TestedCasesDetailsCard,
+    TestedCasesDetailsCard,
     ConfirmedCasesNumberCard,
     PatientsByResidenceCard,
     ConfirmedCasesAttributesCard,
-    // TestedNumberCard,
+    TestedNumberCard,
     InspectionPersonsNumberCard,
     TelephoneAdvisoryReportsNumberCard,
     ConsultationDeskReportsNumberCard
   },
   data() {
-    // let title, updatedAt
-    let title
+    let title, updatedAt
     switch (this.$route.params.card) {
       case 'details-of-confirmed-cases':
         title = this.$t('検査陽性者の状況')
-        // updatedAt = Data.inspections_summary.date
+        updatedAt = Data.inspections_summary.date
         break
       case 'details-of-tested-cases':
         title = this.$t('検査実施状況')
-        // updatedAt = Data.inspection_status_summary.date
+        updatedAt = Data.inspection_status_summary.date
         break
       case 'patients-by-residence':
         title = this.$t('陽性患者数(居住地別)')
-        // updatedAt = Data.patients_by_residence.date
+        updatedAt = Data.patients_by_residence.date
         break
       case 'number-of-confirmed-cases':
         title = this.$t('陽性患者数')
-        // updatedAt = Data.patients.date
+        updatedAt = Data.patients.date
         break
       case 'attributes-of-confirmed-cases':
         title = this.$t('陽性患者の属性')
-        // updatedAt = Data.patients.date
+        updatedAt = Data.patients.date
         break
       case 'number-of-tested':
         title = this.$t('検査実施件数')
-        // updatedAt = Data.inspections_summary.date
+        updatedAt = Data.inspections_summary.date
         break
       case 'number-of-inspection-persons':
         title = this.$t('検査実施件数')
-        // updatedAt = Data.inspection_persons.date
+        updatedAt = Data.inspection_persons.date
         break
       case 'number-of-reports-to-covid19-telephone-advisory-center':
         title = this.$t('帰国者・接触者相談センター相談件数')
-        // updatedAt = Data.contacts.date
+        updatedAt = Data.contacts.date
         break
       case 'number-of-reports-to-covid19-consultation-desk':
         title = this.$t('新型コロナウイルス感染症に関する一般相談件数')
-        // updatedAt = Data.querents.date
+        updatedAt = Data.querents.date
         break
     }
 
     const data = {
-      // title,
-      // updatedAt
-      title
+      title,
+      updatedAt
     }
     return data
   },

@@ -25,6 +25,17 @@
             />
           </div>
         </div>
+        <div :class="[$style.CardBlock, $style.CardBlockDays2, $style.Days2]">
+          <div :class="[$style.CardBlockInner]">
+            <flow-pc-days2 />
+            <img
+              :class="$style.CardBlockIcon"
+              src="/flow/flow_arrow.svg"
+              aria-hidden="true"
+              alt=" "
+            />
+          </div>
+        </div>
         <div
           :class="[$style.CardBlock, $style.CardBlockSuspect, $style.Suspect]"
         >
@@ -102,6 +113,7 @@
 <script>
 import FlowPcPast from './FlowPcPast.vue'
 import FlowPcDays from './FlowPcDays.vue'
+import FlowPcDays2 from './FlowPcDays2.vue'
 import FlowPcSuspect from './FlowPcSuspect.vue'
 import FlowPcAdvisory from './FlowPcAdvisory.vue'
 import FlowPcRequired from './FlowPcRequired.vue'
@@ -113,6 +125,7 @@ export default {
   components: {
     FlowPcPast,
     FlowPcDays,
+    FlowPcDays2,
     FlowPcSuspect,
     FlowPcAdvisory,
     FlowPcRequired,
@@ -174,8 +187,8 @@ export default {
     grid-gap: $grid-gap;
     grid-template-columns: 70% 30%;
     -ms-grid-columns: 70% 12px 30%;
-    grid-template-rows: repeat(3, auto);
-    -ms-grid-rows: auto 12px auto 12px auto;
+    grid-template-rows: repeat(4, auto);
+    -ms-grid-rows: auto 12px auto 12px auto 12px auto;
     // HACK: IEでGridの順番がうまくいかない対応
     // https://github.com/tokyo-metropolitan-gov/covid19/issues/1313
     & > *:nth-child(1) {
@@ -194,14 +207,14 @@ export default {
     }
 
     & > *:nth-child(4) {
-      -ms-grid-column: 3;
-      -ms-grid-row: 1;
-      -ms-grid-row-span: 3;
+      -ms-grid-column: 1;
+      -ms-grid-row: 7;
     }
 
     & > *:nth-child(5) {
       -ms-grid-column: 3;
-      -ms-grid-row: 5;
+      -ms-grid-row: 1;
+      -ms-grid-row-span: 5;
     }
 
     margin-bottom: 36px;
@@ -271,6 +284,13 @@ export default {
     }
   }
 
+  &Days2 {
+    .CardBlockIcon {
+      bottom: 40%;
+      transform: rotate(-45deg);
+    }
+  }
+
   &Required {
     .CardBlockIcon:nth-of-type(1) {
       top: auto;
@@ -316,14 +336,19 @@ export default {
   grid-row: 2 / 3;
 }
 
-.Suspect {
+.Days2 {
   grid-column: 1 / 2;
   grid-row: 3 / 4;
 }
 
+.Suspect {
+  grid-column: 1 / 3;
+  grid-row: 4 / 5;
+}
+
 .Advisory {
   grid-column: 2 / 3;
-  grid-row: 1 / 3;
+  grid-row: 1 / 4;
   position: relative;
 
   &Icon {
