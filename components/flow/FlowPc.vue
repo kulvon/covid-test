@@ -25,6 +25,17 @@
             />
           </div>
         </div>
+        <div :class="[$style.CardBlock, $style.Priority]">
+          <div :class="[$style.CardBlockInner]">
+            <flow-pc-priority />
+            <img
+              :class="$style.CardBlockIcon"
+              src="/flow/flow_arrow.svg"
+              aria-hidden="true"
+              alt=" "
+            />
+          </div>
+        </div>
         <div :class="[$style.CardBlock, $style.Days]">
           <div :class="[$style.CardBlockInner]">
             <flow-pc-days />
@@ -112,8 +123,9 @@
 
 <script>
 import FlowPcPast from './FlowPcPast.vue'
-import FlowPcDays from './FlowPcDays.vue'
 import FlowPcDays2 from './FlowPcDays2.vue'
+import FlowPcDays from './FlowPcDays.vue'
+import FlowPcPriority from './FlowPcPriority.vue'
 import FlowPcSuspect from './FlowPcSuspect.vue'
 import FlowPcAdvisory from './FlowPcAdvisory.vue'
 import FlowPcRequired from './FlowPcRequired.vue'
@@ -124,8 +136,9 @@ import FlowPcHospitalized from './FlowPcHospitalized.vue'
 export default {
   components: {
     FlowPcPast,
-    FlowPcDays,
     FlowPcDays2,
+    FlowPcPriority,
+    FlowPcDays,
     FlowPcSuspect,
     FlowPcAdvisory,
     FlowPcRequired,
@@ -337,19 +350,24 @@ export default {
   grid-row: 2 / 3;
 }
 
-.Days {
+.Priority {
   grid-column: 1 / 2;
   grid-row: 3 / 4;
 }
 
+.Days {
+  grid-column: 1 / 2;
+  grid-row: 4 / 5;
+}
+
 .Suspect {
   grid-column: 1 / 3;
-  grid-row: 4 / 5;
+  grid-row: 5 / 6;
 }
 
 .Advisory {
   grid-column: 2 / 3;
-  grid-row: 1 / 4;
+  grid-row: 1 / 5;
   position: relative;
 
   &Icon {
