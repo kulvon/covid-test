@@ -221,14 +221,19 @@ export default {
 
     & > *:nth-child(4) {
       -ms-grid-column: 1;
-      -ms-grid-column-span: 3;
       -ms-grid-row: 7;
     }
 
     & > *:nth-child(5) {
+      -ms-grid-column: 1;
+      -ms-grid-column-span: 3;
+      -ms-grid-row: 9;
+    }
+
+    & > *:nth-child(6) {
       -ms-grid-column: 3;
       -ms-grid-row: 1;
-      -ms-grid-row-span: 5;
+      -ms-grid-row-span: 7;
     }
 
     margin-bottom: 36px;
