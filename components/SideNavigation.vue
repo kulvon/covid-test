@@ -102,7 +102,7 @@ export default Vue.extend({
         },
         {
           icon: 'CovidIcon',
-          title: this.$t('新型コロナウイルス感染症の相談受診の目安'),
+          title: this.$t('新型コロナウイルス感染症の相談・受診の目安'),
           link: this.localePath('/flow'),
           divider: true
         },
@@ -132,7 +132,7 @@ export default Vue.extend({
         },
         {
           title: this.$t('県民のみなさまへ'),
-          link: 'https://www.pref.ishikawa.lg.jp/kansen/corona.html#1'
+          link: 'https://www.pref.ishikawa.lg.jp/kenmin/covid19/citizen.html'
         },
         {
           title: this.$t('事業者のみなさまへ'),
@@ -143,12 +143,12 @@ export default Vue.extend({
           link: 'https://www.pref.ishikawa.lg.jp/nousei/sikin/index.html'
         },
         {
-          title: this.$t('休業や失業で生活資金にお悩みのみなさまへ'),
-          link: 'https://www.pref.ishikawa.lg.jp/kousei/seikatsufukushi/seikatsufukushi.html'
-        },
-        {
           title: this.$t('医療機関のみなさまへ'),
           link: 'https://www.pref.ishikawa.lg.jp/kansen/corona.html#2'
+        },
+        {
+          title: this.$t('個人向け支援制度について'),
+          link: 'https://www.pref.ishikawa.lg.jp/zaisei/covid19/shien.html'
         },
         {
           title: this.$t('運転免許関連の手続等について'),

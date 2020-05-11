@@ -14,9 +14,9 @@
             />
           </div>
         </div>
-        <div :class="[$style.CardBlock, $style.Days]">
+        <div :class="[$style.CardBlock, $style.CardBlockDays2, $style.Days2]">
           <div :class="[$style.CardBlockInner]">
-            <flow-pc-days />
+            <flow-pc-days2 />
             <img
               :class="$style.CardBlockIcon"
               src="/flow/flow_arrow.svg"
@@ -25,9 +25,9 @@
             />
           </div>
         </div>
-        <div :class="[$style.CardBlock, $style.CardBlockDays2, $style.Days2]">
+        <div :class="[$style.CardBlock, $style.Days]">
           <div :class="[$style.CardBlockInner]">
-            <flow-pc-days2 />
+            <flow-pc-days />
             <img
               :class="$style.CardBlockIcon"
               src="/flow/flow_arrow.svg"
@@ -208,6 +208,7 @@ export default {
 
     & > *:nth-child(4) {
       -ms-grid-column: 1;
+      -ms-grid-column-span: 3;
       -ms-grid-row: 7;
     }
 
@@ -331,12 +332,12 @@ export default {
   grid-row: 1 / 2;
 }
 
-.Days {
+.Days2 {
   grid-column: 1 / 2;
   grid-row: 2 / 3;
 }
 
-.Days2 {
+.Days {
   grid-column: 1 / 2;
   grid-row: 3 / 4;
 }
