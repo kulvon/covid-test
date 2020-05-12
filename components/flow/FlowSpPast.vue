@@ -11,6 +11,7 @@
         </template>
       </i18n>
     </p>
+
     <p :class="$style.type">
       <template v-if="!langsNeedReversedOrder.includes($i18n.locale)">
         <strong :class="$style.source">{{
