@@ -1,7 +1,7 @@
 <template>
   <div :class="$style.container">
     <p :class="$style.heading">
-      <span :class="$style.fzMedium">{{ $t('不安に思う方') }}</span>
+      <span :class="$style.fzMedium">{{ $t('その他') }}</span>
     </p>
 
     <ul :class="[$style.rectContainer, $style.triple]">
@@ -15,48 +15,17 @@
     <p :class="$style.duration">などの相談</p>
 
     <div :class="$style.callcenter">
-      <p :class="$style.fzLarge">
+      <h4 :class="[$style.heading, $style.fzXLarge]">
         {{ $t('一般相談窓口') }}
+      </h4>
+      <p :class="[$style.open, $style.fzSmall]">
+        <span>9:00～18:00</span>
       </p>
       <dl :class="$style.telCenter">
-        <dt>南加賀保健福祉センター</dt>
-        <dd>0761-22-0796</dd>
-        <dt>石川中央保健福祉センター</dt>
-        <dd>076-275-2250</dd>
-        <dt>能登中部保健福祉センター</dt>
-        <dd>0767-53-2482</dd>
-        <dt>能登北部保健福祉センター</dt>
-        <dd>0768-22-2011</dd>
-        <dt>金沢市保健所</dt>
-        <dd>076-234-5116</dd>
-        <dt>石川県健康福祉部健康推進課</dt>
-        <dd>076-225-1438</dd>
+        <dt>石川県感染拡大防止県民相談センター</dt>
+        <dd>076-225-1921</dd>
       </dl>
-      <p :class="[$style.link, $style.fzNumeric, $style.windowLink]">
-        <a
-          href="https://www.pref.ishikawa.lg.jp/kansen/corona.html#contacts"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {{ $t('各保健所の電話番号等はこちら') }}
-          <v-icon size="16">
-            mdi-open-in-new
-          </v-icon>
-        </a>
-      </p>
     </div>
-
-    <a
-      v-scroll-to="{
-        el: '#consult',
-        onDone: onDoneScroll
-      }"
-      href="#consult"
-      :class="[$style.button, $style.clickable]"
-    >
-      <span :class="$style.text">{{ $t('専門的な助言が必要な場合') }}</span>
-      <arrow-forward-icon :class="$style.icon" />
-    </a>
   </div>
 </template>
 
@@ -93,6 +62,21 @@ export default {
       margin-right: px2vw(11);
       flex-grow: 10;
     }
+  }
+}
+.open {
+  margin-top: px2vw(20) !important;
+  display: flex;
+  justify-content: center;
+
+  > span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $gray-5;
+    color: $green-1;
+    padding: px2vw(20) px2vw(40);
+    border-radius: px2vw(6);
   }
 }
 // suspect

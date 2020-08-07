@@ -105,7 +105,18 @@
         </em>
         <span :class="$style.FlowText">{{ $t('または') }}</span>
         <em :class="$style.FlowSymptom">
-          {{ $t('呼吸器症状') }}
+          呼吸器<br>症状
+          <img
+            :class="$style.FlowSymptomIcon"
+            src="/flow/check_circle-24px.svg"
+            aria-hidden="true"
+            alt=" "
+          />
+        </em>
+      </div>
+      <div :class="$style.FlowCondition">
+        <em :class="$style.FlowSymptom">
+          呼吸器<br>症状
           <img
             :class="$style.FlowSymptomIcon"
             src="/flow/check_circle-24px.svg"
@@ -115,17 +126,7 @@
         </em>
         <span :class="$style.FlowText">{{ $t('かつ') }}</span>
         <em :class="$style.FlowSymptom">
-          <i18n tag="span" :class="$style.FlowTextSm" path="発熱{temperature}">
-            <template v-slot:temperature>
-              <i18n tag="span" path="{tempNum}以上">
-                <template v-slot:tempNum>
-                  <span :class="$style.FlowTemperature">
-                    {{ $t('37.5℃') }}
-                  </span>
-                </template>
-              </i18n>
-            </template>
-          </i18n>
+          <span>発熱<br><span>37.5℃以上</span></span>
           <img
             :class="$style.FlowSymptomIcon"
             src="/flow/check_circle-24px.svg"
@@ -241,10 +242,10 @@ export default {
 
   &Condition {
     display: flex;
-    width: 100%;
+    width: 50%;
     padding: 0 15px;
     margin-top: 15px;
-    justify-content: center;
+    justify-content: space-between;
     align-items: stretch;
     text-align: center;
     font-weight: bold;
@@ -261,7 +262,7 @@ export default {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    width: 25%;
+    width: 36%;
     padding: 10px;
     border: 2px solid $green-1;
     border-radius: 3px;
@@ -290,7 +291,13 @@ export default {
 
     @include largerThan($large) {
       max-width: 190px;
-      font-size: 20px;
+      font-size: 18px;
+    }
+
+    span {
+      span {
+        font-size: 15px;;
+      }
     }
   }
 
@@ -299,14 +306,14 @@ export default {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    width: 12.5%;
+    width: 24%;
     padding: 10px;
     font-size: calc(0.75rem + ((1vw - 7.68px) * 1.4881));
     white-space: nowrap;
 
     @include largerThan($large) {
       max-width: 190px;
-      font-size: 21px;
+      font-size: 16px;
     }
   }
 
@@ -319,7 +326,8 @@ export default {
   }
 
   &Temperature {
-    font-size: calc(1rem + ((1vw - 7.68px) * 2.4876));
+    display: block;
+    font-size: calc(1rem + ((1vw - 7.68px) * 1));
     padding-left: 2px;
     padding-right: 2px;
 

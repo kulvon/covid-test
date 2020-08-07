@@ -96,39 +96,54 @@ export default Vue.extend({
     items(): Item[] {
       return [
         {
-          icon: 'mdi-chart-timeline-variant',
+          icon: 'GraphIcon',
           title: this.$t('県内の最新感染動向'),
           link: this.localePath('/')
         },
         {
-          icon: 'CovidIcon',
+          icon: 'MonitorIcon',
+          title: this.$t('モニタリング指標'),
+          link: 'https://www.pref.ishikawa.lg.jp/kansen/monitoring.html'
+        },
+        {
+          icon: 'BedIcon',
+          title: this.$t('病床の確保について'),
+          link: 'https://www.pref.ishikawa.lg.jp/kansen/byoushou.html',
+          divider: true
+        },
+        {
+          icon: 'VirusIcon',
           title: this.$t('新型コロナウイルス感染症の相談・受診の目安'),
           link: this.localePath('/flow'),
           divider: true
         },
         {
-          title: this.$t('知事からのメッセージ'),
-          link: 'https://www.pref.ishikawa.lg.jp/kenmin/covid19/governor_msg.html'
-        },
-        {
           title: this.$t('知事記者会見'),
-          link: 'https://www.pref.ishikawa.lg.jp/chiji/kisya/r2/index.html'
+          link: 'https://www.pref.ishikawa.lg.jp/kenmin/covid19/governor_msg.html'
         },
         {
           title: this.$t('健康福祉部長記者会見'),
           link: 'https://www.pref.ishikawa.lg.jp/kansen/kaiken.html'
         },
         {
-          title: this.$t('石川県緊急事態措置（特措法に基づく措置）'),
-          link: 'https://www.pref.ishikawa.lg.jp/kenmin/covid19/sochi.html'
-        },
-        {
-          title: this.$t('石川県緊急事態宣言'),
-          link: 'https://www.pref.ishikawa.lg.jp/kenmin/covid19/sengen.html'
-        },
-        {
           title: this.$t('対策本部会議の開催状況'),
           link: 'https://www.pref.ishikawa.lg.jp/kansen/coronataisakuhonbu.html'
+        },
+        {
+          title: this.$t('対策専門家会議の開催状況'),
+          link: 'https://www.pref.ishikawa.lg.jp/kansen/senmonkakaigi.html'
+        },
+        {
+          title: this.$t('感染拡大防止に係る取組'),
+          link: 'https://www.pref.ishikawa.lg.jp/kenmin/covid19/efforts.html'
+        },
+        {
+          title: this.$t('支援制度'),
+          link: 'https://www.pref.ishikawa.lg.jp/kenmin/covid19/support.html'
+        },
+        {
+          title: this.$t('相談窓口一覧'),
+          link: 'https://www.pref.ishikawa.lg.jp/kenmin/covid19/documents/contacts.pdf'
         },
         {
           title: this.$t('県民のみなさまへ'),
@@ -139,40 +154,24 @@ export default Vue.extend({
           link: 'https://www.pref.ishikawa.lg.jp/kenmin/covid19/biz.html'
         },
         {
-          title: this.$t('農林漁業者のみなさまへ'),
-          link: 'https://www.pref.ishikawa.lg.jp/nousei/sikin/index.html'
-        },
-        {
           title: this.$t('医療機関のみなさまへ'),
           link: 'https://www.pref.ishikawa.lg.jp/kansen/corona.html#2'
         },
         {
-          title: this.$t('個人向け支援制度について'),
-          link: 'https://www.pref.ishikawa.lg.jp/zaisei/covid19/shien.html'
+          title: this.$t('感染症対策への応援'),
+          link: 'https://www.pref.ishikawa.lg.jp/kenmin/furusatonouzei/coronakifu.html'
         },
         {
-          title: this.$t('運転免許関連の手続等について'),
-          link: 'http://www2.police.pref.ishikawa.lg.jp/application/application01/application01.html'
-        },
-        {
-          title: this.$t('臨時休館・休園する県有施設'),
-          link: 'https://www.pref.ishikawa.lg.jp/kenmin/kouhou/shisetsu.html'
-        },
-        {
-          title: this.$t('延期・中止する県主催イベント'),
-          link: 'https://www.pref.ishikawa.lg.jp/kenmin/kouhou/eventcancel.html'
-        },
-        {
-          title: this.$t('その他の新型コロナウイルス感染症関連情報'),
+          title: this.$t('その他の関連情報'),
           link: 'https://www.pref.ishikawa.lg.jp/kenmin/covid19/others.html'
-        },
-        {
-          title: this.$t('相談窓口一覧'),
-          link: 'https://www.pref.ishikawa.lg.jp/kenmin/covid19/documents/contacts.pdf'
         },
         {
           title: this.$t('当サイトについて'),
           link: this.localePath('/about')
+        },
+        {
+          title: this.$t('SNSによる情報発信'),
+          link: 'https://www.pref.ishikawa.lg.jp/kenmin/covid19/sns.html'
         },
         {
           title: this.$t('石川県公式ホームページ'),

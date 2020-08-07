@@ -37,7 +37,16 @@
     </div>
     <div :class="[$style.FlowRow, $style.FlowRowRowCheck]">
       <div :class="$style.FlowRowCondition">
-        <p>{{ $t('発熱や咳') }}</p>
+        <p>{{ $t('発熱') }}</p>
+        <img
+          :class="$style.FlowRowConditionIcon"
+          src="/flow/check_circle-24px.svg"
+          aria-hidden="true"
+          alt=" "
+        />
+      </div>
+      <div :class="$style.FlowRowCondition">
+        <p>{{ $t('咳') }}</p>
         <img
           :class="$style.FlowRowConditionIcon"
           src="/flow/check_circle-24px.svg"
@@ -58,7 +67,7 @@
 
 <style module lang="scss">
 .Flow {
-  @include card-container($withDivider: true);
+  @include card-container($withDivider: false);
 
   display: flex;
   flex-direction: row;

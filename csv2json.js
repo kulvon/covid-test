@@ -155,7 +155,7 @@ function writeFile(json, fileName) {
     if (err) throw err
     const oldJSON = JSON.parse(data)
     if (isUpdateJSON(oldJSON, json)) {
-      fs.writeFileSync(filePath, JSON.stringify(json, null, '    '), err => {
+      fs.writeFile(filePath, JSON.stringify(json, null, '    '), err => {
         if (err) throw err
       })
     }

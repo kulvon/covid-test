@@ -3,7 +3,7 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/9a8952b2-4514-4dd1-88e6-751c364b3df7/deploy-status)]((https://app.netlify.com/sites/happy-roentgen-86f936/deploys))
 
-<!-- [![石川県 新型コロナウイルス感染症対策サイト](https://raw.githubusercontent.com/prefishikawa/covid19/master/static/ogp.png)](https://stopcovid19.pref.ishikawa.jp/) -->
+[![石川県 新型コロナウイルス感染症対策サイト](https://raw.githubusercontent.com/prefishikawa/covid19/master/static/ogp.png)](https://stopcovid19.pref.ishikawa.jp/)
 
 
 <!-- ## 貢献の仕方 -->
@@ -15,20 +15,20 @@
 <!-- ## 行動原則 -->
 <!-- 詳しくは[サイト構築にあたっての行動原則](./.github/CODE_OF_CONDUCT.md)を御覧ください。 -->
 
-<!-- ## ライセンス
-本ソフトウェアは、[MITライセンス](./LICENSE.txt)の元提供されています。 -->
+## ライセンス
+本ソフトウェアは、[MITライセンス](./LICENSE.txt)の元提供されています。
 
 <!-- ## 本家東京版から派生したサイト
 
 [Link先](./forkedSites.md)を御覧ください。 -->
 
 
-<!-- ## 石川版独自の情報
+## 石川版独自の情報
 
 ### 以下の方針で開発しています
 - 展開速度を優先させるため、一旦は多言語対応を実施せずにリリースします
 - 展開速度を優先させるため、一旦はflow系の機能を停止してリリースします
-- 展開後の改善を容易にするため、使用しない部分はコードの最低限の改変によってUIから削除するに留め、残りの部分はUIから見えないコード中には残存させます。 -->
+- 展開後の改善を容易にするため、使用しない部分はコードの最低限の改変によってUIから削除するに留め、残りの部分はUIから見えないコード中には残存させます。
 
 <!-- ## 開発者向け情報
 

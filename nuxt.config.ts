@@ -113,7 +113,7 @@ const config: Configuration = {
     }
   },
   googleAnalytics: {
-    id: 'UA-123456789-1' // .env.production などに設定してください。
+    id: 'UA-7636173-21' // .env.production などに設定してください。
   },
   optionalCookies: [
     {

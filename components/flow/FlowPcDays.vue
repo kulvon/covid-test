@@ -17,7 +17,16 @@
     </div>
     <div :class="[$style.FlowRow, $style.FlowRowRowCheck]">
       <div :class="$style.FlowRowCondition">
-        <p>{{ $t('息苦しさ') }}</p>
+        <p>{{ $t('発熱') }}</p>
+        <img
+          :class="$style.FlowRowConditionIcon"
+          src="/flow/check_circle-24px.svg"
+          aria-hidden="true"
+          alt=" "
+        />
+      </div>
+      <div :class="$style.FlowRowCondition">
+        <p>{{ $t('咳') }}</p>
         <img
           :class="$style.FlowRowConditionIcon"
           src="/flow/check_circle-24px.svg"
@@ -32,7 +41,7 @@
       </div>
       <div>
         <p :class="$style.notes">
-          <span>※症状が4日以上</span><span>続く場合は必ず</span><span>ご相談ください。</span>
+          <span>症状が4日以上続く場合は</span><span>必ずご相談ください</span>
         </p>
       </div>
     </div>
@@ -41,7 +50,7 @@
 
 <style module lang="scss">
 .Flow {
-  @include card-container($withDivider: true);
+  @include card-container($withDivider: false);
 
   display: flex;
   flex-direction: row;

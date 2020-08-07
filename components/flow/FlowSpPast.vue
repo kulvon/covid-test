@@ -11,7 +11,6 @@
         </template>
       </i18n>
     </p>
-
     <p :class="$style.type">
       <template v-if="!langsNeedReversedOrder.includes($i18n.locale)">
         <strong :class="$style.source">{{
@@ -50,7 +49,7 @@
         {{ $t('または') }}
       </p>
       <p :class="$style.symptom">
-        {{ $t('呼吸器症状') }}
+        呼吸器<br>症状
       </p>
     </div>
     <p :class="[$style.type, $style.hr]">
@@ -96,25 +95,13 @@
     </p>
     <div :class="[$style.rectContainer, $style.req]">
       <p :class="$style.symptom">
-        {{ $t('呼吸器症状') }}
+        呼吸器<br>症状
       </p>
       <p :class="$style.op">
         {{ $t('かつ') }}
       </p>
       <p :class="$style.symptom">
-        <i18n tag="span" path="発熱{temperature}" :class="$style.fzSmall">
-          <template v-slot:temperature>
-            <i18n
-              tag="span"
-              path="{tempNum}以上"
-              :class="[$style.break, $style.fzRegular]"
-            >
-              <template v-slot:tempNum>
-                <span :class="$style.temp">{{ $t('37.5℃') }}</span>
-              </template>
-            </i18n>
-          </template>
-        </i18n>
+        <span>発熱<br><span :class="$style.fzSmall">37.5℃以上</span></span>
       </p>
     </div>
     <a
