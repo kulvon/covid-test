@@ -1,14 +1,14 @@
 <template>
   <v-col cols="12" md="6" class="DataCard">
     <data-table
-      :title="$t('陽性患者の属性')"
+      :title="$t('検査陽性者の属性')"
       :title-id="'attributes-of-confirmed-cases'"
       :chart-data="patientsTable"
       :chart-option="{}"
       :date="Patients.date"
       :info="sumInfoOfPatients"
-      :url="'https://catalog.data.metro.tokyo.lg.jp/dataset/t000010d0000000068'"
-      :source="$t('オープンデータを入手')"
+      :url="'https://www.pref.ishikawa.lg.jp/kansen/documents/170003_ishikawa_covid19_patients.csv'"
+      :source="$t('データベースはこちら')"
       :custom-sort="customSort"
     />
   </v-col>
@@ -42,12 +42,12 @@ export default {
       unit: this.$t('人')
     }
 
-    // 陽性患者の属性 ヘッダー翻訳
+    // 検査陽性者の属性 ヘッダー翻訳
     for (const header of patientsTable.headers) {
       header.text =
         header.value === '退院' ? this.$t('退院※') : this.$t(header.value)
     }
-    // 陽性患者の属性 中身の翻訳
+    // 検査陽性者の属性 中身の翻訳
     for (const row of patientsTable.datasets) {
       row['居住地'] = this.getTranslatedWording(row['居住地'])
       row['性別'] = this.getTranslatedWording(row['性別'])
