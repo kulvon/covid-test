@@ -1,5 +1,5 @@
 <template>
-  <div :class="$style.Advisory">
+  <div id="advisory" :class="$style.Advisory">
     <div :class="$style.AdvisoryContainer">
       <div :class="$style.AdvisoryContents">
         <div>

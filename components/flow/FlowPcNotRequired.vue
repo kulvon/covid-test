@@ -37,13 +37,13 @@
           </template>
           <template v-slot:advisory>
             <strong :class="$style.badLink">
-              <!-- <a href="https://www.pref.ishikawa.lg.jp/kansen/corona.html#center" target="_blank"> -->
+              <a href="#advisory"> 
                 {{ $t('発熱患者等の受診相談先へ') }}
                 <!-- <v-icon size="18">
                   mdi-open-in-new
                 </v-icon><br>
                 <span>{{ $t('（新型コロナ受診相談窓口）') }}</span> -->
-              <!-- </a> -->
+              </a>
             </strong>
           </template>
         </i18n>
