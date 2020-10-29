@@ -64,11 +64,11 @@
         <i18n
           :class="$style.TitleSmall"
           tag="span"
-          path="{advisory}による相談結果"
+          path="{advisory}を受診"
         >
           <template v-slot:advisory>
             <span :class="$style.TitleLarge">
-              {{ $t('帰国者・接触者 相談センター') }}
+              {{ $t('かかりつけ医等') }}
             </span>
           </template>
         </i18n>

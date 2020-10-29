@@ -4,37 +4,40 @@
       <div :class="$style.AdvisoryContents">
         <div>
           <span :class="$style.AdvisoryContentsTitleSmall">{{
-            $t('帰国者・接触者 相談センター')
+            $t('発熱患者等の受診相談先')
           }}</span>
         </div>
-        <div :class="[$style.AdvisoryContentsColsSentense_17Ilp, 'mt-4']">
-          {{ $t('（新型コロナ受診相談窓口）') }}
+        <div :class="[$style.AdvisoryContentsColsSentense, 'mt-4']">
+          <strong>まずは、<span>かかりつけ医等</span>の地域で身近な医療機関に電話相談</strong>
         </div>
-        <div>
+        <div :class="[$style.AdvisoryContentsColsSentense, 'mt-4']">
+          <p>相談する医療機関に迷う場合は、「石川県発熱患者等受診相談センター」に電話相談</p>
+        </div>
+
+        <!-- <div>
           <div :class="[$style.AdvisoryBoxContainer, $style.AdvisoryWhiteBox]">
             <span :class="$style.AdvisoryWhiteBoxSentense">
               {{ $t('24時間対応') }}
             </span>
           </div>
-        </div>
+        </div> -->
       </div>
 
       <div :class="$style.AdvisoryContents">
-        <dl>
-          <dt>南加賀保健福祉センター</dt>
-          <dd>0761-22-0796</dd>
-          <dt>石川中央保健福祉センター</dt>
-          <dd>076-275-2250</dd>
-          <dt>能登中部保健福祉センター</dt>
-          <dd>0767-53-2482</dd>
-          <dt>能登北部保健福祉センター</dt>
-          <dd>0768-22-2011</dd>
-          <dt>金沢市保健所</dt>
-          <dd>076-234-5106</dd>
-          <dt>石川県健康福祉部健康推進課</dt>
-          <dd>076-225-1670</dd>
-        </dl>
-        <div :class="$style.AdvisoryContentsDiv">
+        <div>
+          <div>「石川県発熱患者等<br>受診相談センター」</div>
+          <div>
+            <div :class="[$style.AdvisoryBoxContainer, $style.AdvisoryWhiteBox]">
+              <span :class="$style.AdvisoryWhiteBoxSentense">
+                {{ $t('24時間対応') }}
+              </span>
+            </div>
+            <div>0120-(540)-004</div>
+          </div>
+
+        </div>
+
+        <!--<div :class="$style.AdvisoryContentsDiv">
           <div
             :class="[
               $style.AdvisoryLink,
@@ -52,7 +55,7 @@
               </v-icon>
             </a>
           </div>
-        </div>
+        </div> -->
       </div>
 
       <div :class="$style.AdvisoryContents">
@@ -105,7 +108,22 @@
     }
 
     &ColsSentense {
-      line-height: 18px;
+      font-size: 16px;
+      line-height: 24px;
+      text-align: left !important;
+
+      strong {
+        font-size: 18px;
+      }
+
+      span {
+        font-size: 24px;
+      }
+
+      p {
+        font-size: 16px;
+        font-weight: normal;
+      }
     }
 
     &Div {
@@ -181,6 +199,8 @@
     background-color: $white;
     max-width: 160px;
     padding: 8px;
+    margin-top: 12px;
+    margin-bottom: 12px;
 
     &Sentense {
       color: $green-1;

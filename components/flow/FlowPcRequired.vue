@@ -1,7 +1,7 @@
 <template>
   <div :class="$style.Container">
     <div :class="$style.Row">
-      <i18n
+      <!-- <i18n
         :class="$style.Catch"
         tag="p"
         path="帰国者・接触者外来 {advice} と判断された場合"
@@ -11,16 +11,16 @@
             {{ $t('受診が必要') }}
           </span>
         </template>
-      </i18n>
+      </i18n> -->
     </div>
     <div :class="$style.Row">
       <div :class="[$style.Card, $style.CardLarge, $style.CardGray]">
         <template v-if="!langsWithoutOutpatient.includes($i18n.locale)">
-          <p :class="$style.Outpatient">
-            {{ $t('帰国者・接触者外来') }}
-          </p>
+          <!-- <p :class="$style.Outpatient">
+            {{ $t('医師が検査の必要性を判断') }}
+          </p> -->
           <p :class="$style.Judge">
-            {{ $t('医師による判断') }}
+            {{ $t('医師が検査の必要性を判断') }}
           </p>
         </template>
         <template v-else>

@@ -209,9 +209,14 @@ function inspectionPersons(json, jsonObject) {
     const date = new Date(`${row['実施_年月日']}`)
     const formattedDate = dateFormat.format(date, 'yyyy-MM-dd')
     const testCount = parseInt(row['検査実施_件数'])
+    const adminInspection = parseInt(row['行政検査_件数']) // 行政検査_件数
+    const insuranceCoverage = parseInt(row['保険適用検査_件数']) // 保険適用検査_件数
     const dataItem = {
       日付: `${formattedDate}T00:00:00.000+09:00`,
-      小計: testCount
+      小計: testCount,
+      行政検査: adminInspection,
+      保険適用検査: insuranceCoverage
+
     }
     jsonObject.data.push(dataItem)
   })

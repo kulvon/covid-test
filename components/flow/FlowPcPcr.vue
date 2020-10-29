@@ -6,7 +6,10 @@
           {{ $t('PCR検査') }}
         </p>
         <p :class="$style.content">
-          {{ $t('石川県保健環境センター等') }}
+          {{ $t('または') }}
+        </p>
+        <p :class="$style.h1">
+          {{ $t('抗原検査') }}
         </p>
       </div>
     </div>
@@ -60,6 +63,10 @@
         @include font-size(22);
 
         line-height: 1.2;
+
+        + .h1 {
+          margin-top: 0.25em;
+        }
       }
     }
   }
