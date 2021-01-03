@@ -5,7 +5,7 @@ on:
     types: [build_application]
   push:
     branches:
-      - master
+      - main
 
 jobs:
   deploy:
