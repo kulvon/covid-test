@@ -1,25 +1,20 @@
 {
-    "date": "2021/11/12 17:51",
+    "date": "2021/11/24 19:05",
     "newsItems": [
         {
-            "date": "2021/11/12",
-            "url": "https://www.pref.ishikawa.lg.jp/kenmin/covid19/documents/211112.pdf",
-            "text": "「ステージ1（感染要注意）」へ移行"
+            "date": "2021/11/24",
+            "url": "https://www.pref.ishikawa.lg.jp/kenmin/covid19/documents/211124.pdf",
+            "text": "基本的対処方針の改定による行動制限緩和について"
         },
         {
-            "date": "2021/10/27",
-            "url": "https://www.pref.ishikawa.lg.jp/kenmin/covid19/documents/211027.pdf",
-            "text": "ワクチン・検査パッケージに関する技術実証について"
+            "date": "2021/11/24",
+            "url": "https://www.pref.ishikawa.lg.jp/kansen/coronataisakuhonbu.html",
+            "text": "新型コロナウイルス感染症対策本部会議の開催状況について"
         },
         {
             "date": "2021/6/14",
             "url": "https://www.pref.ishikawa.lg.jp/kankou/ninshou.html",
             "text": "いしかわ新型コロナ対策認証制度について"
-        },
-        {
-            "date": "2021/6/14",
-            "url": "https://www.pref.ishikawa.lg.jp/kansen/vaccinecenter.html",
-            "text": "いしかわ県民ワクチン接種センターについて"
         }
     ]
 }
