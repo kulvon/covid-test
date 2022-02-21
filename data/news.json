@@ -1,6 +1,11 @@
 {
-    "date": "2022/02/16 19:51",
+    "date": "2022/02/21 10:46",
     "newsItems": [
+        {
+            "date": "2022/2/18",
+            "url": "https://www.pref.ishikawa.lg.jp/kenmin/covid19/documents/220218.pdf",
+            "text": "「まん延防止等重点措置」の延長（3月6日まで）について"
+        },
         {
             "date": "2022/2/16",
             "url": "https://www.pref.ishikawa.lg.jp/kenmin/covid19/documents/220216.pdf",
@@ -10,11 +15,6 @@
             "date": "2022/1/25",
             "url": "https://www.pref.ishikawa.lg.jp/kenmin/covid19/documents/220125.pdf",
             "text": "「まん延防止等重点措置（1月27日から2月20日まで）」の適用について"
-        },
-        {
-            "date": "2022/1/23",
-            "url": "https://www.pref.ishikawa.lg.jp/kenmin/covid19/documents/220123.pdf",
-            "text": "「レベル2（感染拡大警報）」への移行"
         }
     ]
 }
